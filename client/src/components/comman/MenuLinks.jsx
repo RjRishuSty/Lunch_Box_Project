@@ -7,6 +7,11 @@ import DropdownMenu from "./DropdownMenu";
 const MenuLinks = () => {
   const isLaptop = useMediaQuery('(max-width:1270px)');
   const { pathname } = useLocation();
+  const shortLabels = {
+  "About Us": "About",
+  "Contact Us": "Contact",
+};
+
   return (
     <Stack
       sx={{
@@ -39,7 +44,7 @@ const MenuLinks = () => {
                   },
                 }}
               >
-                {label}
+                {isLaptop ? shortLabels[label] || label : label}
               </Typography>
             )}
           </React.Fragment>

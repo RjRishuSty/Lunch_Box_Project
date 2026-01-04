@@ -137,7 +137,6 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#FFFFFF",
-          color: "#1B5E20",
           boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
         },
       },

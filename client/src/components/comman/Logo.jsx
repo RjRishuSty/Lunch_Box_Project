@@ -2,15 +2,15 @@ import React from "react";
 import { Box } from "@mui/material";
 import logo from "../../assets/logo.png";
 
-const Logo = ({ width, maxHeight, sx }) => {
+const Logo = ({ sx }) => {
   return (
     <Box
       component="img"
       src={logo}
       alt="Nirmala Farms"
       sx={{
-        width: width || 200,
-        maxHeight: maxHeight || 70,
+        // border:'2px solid red',
+        width: 'auto',
         objectFit: "contain",
         display: "block",
         ...sx,

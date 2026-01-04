@@ -70,7 +70,7 @@ const DropdownMenu = ({ label, children }) => {
                 sx={{
                   bgcolor: isActive ? "secondary.light" : "transparent",
                   color: isActive ? "white" : "text.primary",
-                  fontSize:isLaptop?'0.9rem':'5rem',
+                  fontSize:isLaptop?'0.9rem':'1rem',
                   "&:hover": {
                     bgcolor: "secondary.main",
                     color: "white",
