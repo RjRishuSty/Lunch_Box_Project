@@ -1,24 +1,33 @@
 import React from "react";
 import navLinks from "../../data/navLinks";
-import { Typography, Stack, Button, Menu, MenuItem, useMediaQuery } from "@mui/material";
+import {
+  Typography,
+  Stack,
+  Button,
+  Menu,
+  MenuItem,
+  useMediaQuery,
+  Divider,
+} from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
 
-const MenuLinks = () => {
-  const isLaptop = useMediaQuery('(max-width:1270px)');
+const MenuLinks = ({ useIn,scrolled }) => {
+  const isLaptop = useMediaQuery("(max-width:1270px)");
   const { pathname } = useLocation();
+  const isSidebar = useIn === "sidebar";
   const shortLabels = {
-  "About Us": "About",
-  "Contact Us": "Contact",
-};
+    "About Us": "About",
+    "Contact Us": "Contact",
+  };
 
   return (
     <Stack
       sx={{
-        flexDirection: "row",
-        gap: { xs: 0, sm: 0, md: isLaptop?1.5:3 },
+        flexDirection: isSidebar ? "column" : "row",
+        gap: { xs: 2, sm: 2, md: isLaptop ? 1.5 : 3 },
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: isSidebar ? "start" : "center",
       }}
     >
       {navLinks.map(({ id, label, path, children }) => {
@@ -26,14 +35,14 @@ const MenuLinks = () => {
         return (
           <React.Fragment key={id}>
             {children ? (
-              <DropdownMenu label={label} children={children} />
+              <DropdownMenu label={label} children={children} scrolled={scrolled} />
             ) : (
               <Typography
                 component={Link}
-                variant={isLaptop?"body2":"body1"}
+                variant={isLaptop ? "body2" : "body1"}
                 to={path}
                 sx={{
-                  color: isActive ? "secondary.dark" : "text.primary",
+                  color: isActive ? "secondary.dark" :scrolled?"text.primary":"#fff",
                   cursor: "pointer",
                   textDecoration: "none",
                   fontWeight: 500,
@@ -44,7 +53,11 @@ const MenuLinks = () => {
                   },
                 }}
               >
-                {isLaptop ? shortLabels[label] || label : label}
+                {isSidebar
+                  ? label
+                  : isLaptop
+                  ? shortLabels[label] || label
+                  : label}
               </Typography>
             )}
           </React.Fragment>

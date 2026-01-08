@@ -10,6 +10,7 @@ const Logo = ({ sx }) => {
       alt="Nirmala Farms"
       sx={{
         // border:'2px solid red',
+        py:0.7,
         width: 'auto',
         objectFit: "contain",
         display: "block",

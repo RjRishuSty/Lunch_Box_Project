@@ -50,25 +50,28 @@ export const theme = createTheme({
     fontFamily: ["Poppins", "Hind", "Roboto", "Arial", "sans-serif"].join(","),
 
     h1: {
-      fontSize: "3rem",
+      fontSize: "5rem",
+      fontWeight: 700,
+    },
+
+    h2: {
+      fontSize: "4rem",
       fontWeight: 700,
       color: "#1B5E20",
     },
 
-    h2: {
-      fontSize: "2.5rem",
-      fontWeight: 600,
-      color: "#1B5E20",
-    },
-
     h3: {
-      fontSize: "2rem",
-      fontWeight: 600,
+      fontSize: "2.5rem",
+      fontWeight: 900,
+      textAlign: "center",
+      background: "linear-gradient(90deg, #D84315, #4CAF50, #D84315)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
     },
 
     h4: {
-      fontSize: "1.6rem",
-      fontWeight: 500,
+      fontSize: "2rem",
+      fontWeight: 900,
     },
 
     h5: {
@@ -106,8 +109,8 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 5,
-          fontWeight:400,
-          letterSpacing:1
+          fontWeight: 400,
+          letterSpacing: 1,
         },
         containedPrimary: {
           backgroundColor: "#1B5E20",
@@ -136,7 +139,7 @@ export const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "transparent",
           boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
         },
       },
